@@ -8,8 +8,8 @@ BUILD_DIR = build
 # source
 ######################################
 CPP_SOURCES_F0 = main.cpp
-CMSIS_PATH = mculib3/STM32F0_files
 LIBRARY_PATH = mculib3
+CMSIS_PATH = $(LIBRARY_PATH)/STM32F0_files
 
 ASM_SOURCES_F0 = $(CMSIS_PATH)/startup_stm32f030x6.s
 LDSCRIPT_F0 = $(CMSIS_PATH)/STM32F030K6Tx_FLASH.ld
@@ -52,9 +52,7 @@ FLOAT-ABI_F0 =
 MCU_F0 = $(CPU_F0) -mthumb $(FPU_F0) $(FLOAT-ABI_F0)
 
 # compile gcc flags
-ASFLAGS_F0 = $(MCU_F0) $(OPT) -Wall -fdata-sections -ffunction-sections
-
-CFLAGS_F0  = $(MCU_F0) $(C_DEFS_F0) $(C_INCLUDES) $(C_INCLUDES_F0) $(OPT)
+CFLAGS_F0  = $(MCU_F0) $(C_INCLUDES) $(OPT)
 CFLAGS_F0 += -fdata-sections -ffunction-sections -fno-exceptions -fno-strict-volatile-bitfields -fno-threadsafe-statics
 CFLAGS_F0 += -Wall -Wno-register  -Wno-packed-bitfield-compat -Wno-strict-aliasing
 CFLAGS_F0 += -g -gdwarf-2 
@@ -119,7 +117,8 @@ util:
 
 submodule:
 	git submodule update --init
-	cd mculib3/ && git checkout dvk
+	cd mculib3/ && git fetch origin dvk
+	cd mculib3/ && git checkout d3ac694051055df9a468b14a695414ba75d4e6aa 
   
 #######################################
 # dependencies
