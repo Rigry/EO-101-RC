@@ -21,7 +21,7 @@ extern "C" void init_clock ()
 
 int main()
 {
-	constexpr bool parity_enable {true};
+    constexpr bool parity_enable {true};
     constexpr int timeout {50}; // ms
     UART::Settings set {
           not parity_enable
@@ -31,9 +31,9 @@ int main()
         , UART::Baudrate::BR9600
     };
 
-    Register<1, 2> temp;
-    Register<3, 7> uf;
-    Register<2, 4> time;
+    Register<1, Modbus_function::read_03, 2> temp;
+    Register<3, Modbus_function::read_03, 7> uf;
+    Register<2, Modbus_function::read_03, 4> time;
 
     decltype(auto) master = make_modbus_master <
           mcu::Periph::USART1
@@ -46,3 +46,4 @@ int main()
         master();
     }
 }
+

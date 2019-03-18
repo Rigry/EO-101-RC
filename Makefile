@@ -117,8 +117,8 @@ util:
 
 submodule:
 	git submodule update --init
-	cd mculib3/ && git fetch origin dvk
-	cd mculib3/ && git checkout d3ac694051055df9a468b14a695414ba75d4e6aa 
+	cd mculib3/ && git fetch origin develop
+	cd mculib3/ && git checkout 90691948b83789b107f45ccbf0efb80dc14c8b93
   
 #######################################
 # dependencies
