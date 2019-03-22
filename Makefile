@@ -1,4 +1,4 @@
-TARGET_F0 = main
+TARGET_F0 = EO101_NO470
 DEBUG = 1
 OPT = -Os
 CPPSTD =-std=c++17
@@ -87,7 +87,7 @@ vpath %.s $(sort $(dir $(ASM_SOURCES_F0)))
 
 
 
-$(BUILD_DIR)/$(TARGET_F0).o:$(CPP_SOURCES_F0) Makefile | $(BUILD_DIR) 
+$(BUILD_DIR)/main.o:$(CPP_SOURCES_F0) Makefile | $(BUILD_DIR) 
 	$(CPP) -c $(CFLAGS_F0) $(CPPSTD) -fno-rtti -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.cpp=.lst)) $< -o $@
 
 $(BUILD_DIR)/startup_stm32f030x6.o: $(ASM_SOURCES_F0) Makefile | $(BUILD_DIR)
@@ -117,8 +117,8 @@ util:
 
 submodule:
 	git submodule update --init
-	cd mculib3/ && git fetch origin develop
-	cd mculib3/ && git checkout 90691948b83789b107f45ccbf0efb80dc14c8b93
+	cd mculib3/ && git fetch
+	cd mculib3/ && git checkout v1.00
   
 #######################################
 # dependencies
