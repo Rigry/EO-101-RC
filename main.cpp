@@ -90,7 +90,7 @@ int main()
         sense_us = state.us_on;
 
         if (overheat |= modbus.temperature > modbus.max_temperature)
-            overheat  = modbus.temperature < recovery_temperature;
+            overheat  = modbus.temperature > recovery_temperature;
 
         alarm = (state.uv_on and any_lamps_off<4>(modbus.lamp_flags))
              or (state.uv_on and modbus.uv_level < modbus.min_uv_level)
