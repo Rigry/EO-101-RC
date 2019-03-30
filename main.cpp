@@ -69,6 +69,8 @@ int main()
         Register<uov_address, Modbus_function::read_03, 6>  max_temperature;
     } modbus;
 
+    modbus.max_temperature = 55; // пока не пришло значение по модбасу
+
     decltype(auto) modbus_master =
         make_modbus_master <mcu::Periph::USART1, TX, RX, RTS> (
             timeout, set, modbus
