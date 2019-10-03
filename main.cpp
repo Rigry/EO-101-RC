@@ -24,7 +24,7 @@ using DO4 = mcu::PA5;
 
 using TX  = mcu::PA2;
 using RX  = mcu::PA3;
-using RTS = mcu::PB1;
+using RTS = mcu::PA1;
 
 template<int lamps_qty>
 bool any_lamps_off (uint16_t lamps_flag)
