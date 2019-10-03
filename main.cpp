@@ -30,7 +30,7 @@ template<int lamps_qty>
 bool any_lamps_off (uint16_t lamps_flag)
 {
     std::bitset<lamps_qty> bits {lamps_flag};
-    return not bits.all();
+    return bits.any();
 }
 
 int main()
@@ -39,7 +39,7 @@ int main()
     auto [sense_us  , sense_uv  , alarm           ] = make_pins<mcu::PinMode::Output,DO1,DO2,DO3>();
 
     constexpr bool parity_enable {true};
-    constexpr int  timeout       {50_ms};
+    constexpr int  timeout       {200_ms};
     constexpr UART::Settings set {
           not parity_enable
         , UART::Parity::even
@@ -65,7 +65,7 @@ int main()
         Register<uov_address, Modbus_function::read_03, 11> lamp_flags;
         Register<uov_address, Modbus_function::read_03, 7>  uv_level;
         Register<uov_address, Modbus_function::read_03, 8>  min_uv_level;
-        Register<uov_address, Modbus_function::read_03, 7>  temperature;
+        Register<uov_address, Modbus_function::read_03, 5>  temperature;
         Register<uov_address, Modbus_function::read_03, 6>  max_temperature;
     } modbus;
 
@@ -93,6 +93,7 @@ int main()
 
         if (overheat |= modbus.temperature > modbus.max_temperature)
             overheat  = modbus.temperature > recovery_temperature;
+
 
         alarm = (state.uv_on and any_lamps_off<4>(modbus.lamp_flags))
              or (state.uv_on and modbus.uv_level < modbus.min_uv_level)

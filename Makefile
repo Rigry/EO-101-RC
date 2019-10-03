@@ -71,7 +71,7 @@ LDFLAGS_F0  = $(MCU_F0) -specs=nano.specs -specs=nosys.specs
 LDFLAGS_F0 += -T$(LDSCRIPT_F0) $(LIBS) -Wl,-Map=$(BUILD_DIR)/$(TARGET_F0).map,--cref -Wl,--gc-sections
 
 # default action: build all
-all: submodule clean \
+all:  clean \
 $(BUILD_DIR)/$(TARGET_F0).elf $(BUILD_DIR)/$(TARGET_F0).hex $(BUILD_DIR)/$(TARGET_F0).bin
 	
 
@@ -112,13 +112,19 @@ clean:
 flash:
 	st-flash write $(BUILD_DIR)/$(TARGET_F0).bin 0x8000000
 
+read:
+	st-flash read $(BUILD_DIR)/default.bin 0x08000000 0x10000
+
+flashread:
+	st-flash write $(BUILD_DIR)/default.bin 0x08000000
+
 util:
 	st-util
 
 submodule:
 	git submodule update --init
 	cd mculib3/ && git fetch
-	cd mculib3/ && git checkout v1.00
+	cd mculib3/ && git checkout v1.06
   
 #######################################
 # dependencies
