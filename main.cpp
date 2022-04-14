@@ -53,13 +53,7 @@ int main()
     struct Work_flags {
         bool us_on :1;
         bool uv_on :1;
-        bool res   :1;
-        bool res   :1;
-        bool res   :1;
-        bool res   :1;
-        bool res   :1;
-        bool rc    :1;
-        uint16_t   :8;
+        uint16_t   :14;
     };
 
     struct Modbus {
