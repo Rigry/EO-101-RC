@@ -53,14 +53,21 @@ int main()
     struct Work_flags {
         bool us_on :1;
         bool uv_on :1;
-        uint16_t   :14;
+        bool res   :1;
+        bool res   :1;
+        bool res   :1;
+        bool res   :1;
+        bool res   :1;
+        bool rc    :1;
+        uint16_t   :8;
     };
 
     struct Modbus {
-        Register<uov_address, Modbus_function::read_03      , 4, Work_flags> state;
+        Register<uov_address, Modbus_function::read_03, 4, Work_flags> state;
 
         Register<uov_address, Modbus_function::force_coil_05, 0> us;
         Register<uov_address, Modbus_function::force_coil_05, 1> uv;
+        Register<uov_address, Modbus_function::force_coil_05, 1> rc;
 
         Register<uov_address, Modbus_function::read_03, 11> lamp_flags;
         Register<uov_address, Modbus_function::read_03, 7>  uv_level;
@@ -86,6 +93,7 @@ int main()
         modbus.uv.disable = not distance_control;
         modbus.us = control_us;
         modbus.uv = control_uv;
+        modbus.rc = distance_control;
 
         Work_flags state = modbus.state;
         sense_uv = state.uv_on;
@@ -95,7 +103,7 @@ int main()
             overheat  = modbus.temperature > recovery_temperature;
 
 
-        alarm = (state.uv_on and any_lamps_off<4>(modbus.lamp_flags))
+        alarm = (state.uv_on and any_lamps_off<6>(modbus.lamp_flags)) // remake without template
              or (state.uv_on and modbus.uv_level < modbus.min_uv_level)
              or overheat;
 
