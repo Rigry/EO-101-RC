@@ -78,6 +78,8 @@ Discarded input sections
  .group         0x0000000000000000        0xc build/main.o
  .group         0x0000000000000000        0xc build/main.o
  .group         0x0000000000000000        0xc build/main.o
+ .group         0x0000000000000000        0xc build/main.o
+ .group         0x0000000000000000        0xc build/main.o
  .group         0x0000000000000000        0x8 build/main.o
  .group         0x0000000000000000        0x8 build/main.o
  .group         0x0000000000000000        0x8 build/main.o
@@ -305,7 +307,7 @@ LOAD /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtn.o
                 0x0000000008000000                g_pfnVectors
                 0x00000000080000c0                . = ALIGN (0x4)
 
-.text           0x00000000080000c0     0x1674
+.text           0x00000000080000c0     0x16b8
                 0x00000000080000c0                . = ALIGN (0x4)
  *(.text)
  .text          0x00000000080000c0       0x98 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
@@ -427,158 +429,164 @@ LOAD /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtn.o
                 0x0000000008000cf8      0x1d8 build/main.o
                 0x0000000008000cf8                Modbus_master<9u>::operator()()
  .text.startup.main
-                0x0000000008000ed0      0x598 build/main.o
+                0x0000000008000ed0      0x59c build/main.o
                 0x0000000008000ed0                main
  .text._Z5CRC16IPKhEDaT_S2_
-                0x0000000008001468       0x28 build/main.o
-                0x0000000008001468                auto CRC16<unsigned char const*>(unsigned char const*, unsigned char const*)
+                0x000000000800146c       0x28 build/main.o
+                0x000000000800146c                auto CRC16<unsigned char const*>(unsigned char const*, unsigned char const*)
  .text._ZN8RegisterILh1EL15Modbus_function3ELt4EZ4mainE10Work_flagsE7get_crcEv
-                0x0000000008001490       0x2c build/main.o
+                0x0000000008001494       0x2c build/main.o
  .text._ZN8RegisterILh1EL15Modbus_function3ELt6EtE7get_crcEv
-                0x00000000080014bc       0x2c build/main.o
-                0x00000000080014bc                Register<(unsigned char)1, (Modbus_function)3, (unsigned short)6, unsigned short>::get_crc()
+                0x00000000080014c0       0x2c build/main.o
+                0x00000000080014c0                Register<(unsigned char)1, (Modbus_function)3, (unsigned short)6, unsigned short>::get_crc()
  .text._ZN8RegisterILh1EL15Modbus_function3ELt5EtE7get_crcEv
-                0x00000000080014e8       0x2c build/main.o
-                0x00000000080014e8                Register<(unsigned char)1, (Modbus_function)3, (unsigned short)5, unsigned short>::get_crc()
+                0x00000000080014ec       0x2c build/main.o
+                0x00000000080014ec                Register<(unsigned char)1, (Modbus_function)3, (unsigned short)5, unsigned short>::get_crc()
  .text._ZN8RegisterILh1EL15Modbus_function3ELt8EtE7get_crcEv
-                0x0000000008001514       0x2c build/main.o
-                0x0000000008001514                Register<(unsigned char)1, (Modbus_function)3, (unsigned short)8, unsigned short>::get_crc()
+                0x0000000008001518       0x2c build/main.o
+                0x0000000008001518                Register<(unsigned char)1, (Modbus_function)3, (unsigned short)8, unsigned short>::get_crc()
  .text._ZN8RegisterILh1EL15Modbus_function3ELt7EtE7get_crcEv
-                0x0000000008001540       0x2c build/main.o
-                0x0000000008001540                Register<(unsigned char)1, (Modbus_function)3, (unsigned short)7, unsigned short>::get_crc()
+                0x0000000008001544       0x2c build/main.o
+                0x0000000008001544                Register<(unsigned char)1, (Modbus_function)3, (unsigned short)7, unsigned short>::get_crc()
  .text._ZN8RegisterILh1EL15Modbus_function3ELt11EtE7get_crcEv
-                0x000000000800156c       0x2c build/main.o
-                0x000000000800156c                Register<(unsigned char)1, (Modbus_function)3, (unsigned short)11, unsigned short>::get_crc()
+                0x0000000008001570       0x2c build/main.o
+                0x0000000008001570                Register<(unsigned char)1, (Modbus_function)3, (unsigned short)11, unsigned short>::get_crc()
+ .text._ZN8RegisterILh1EL15Modbus_function5ELt2EbE7get_crcEv
+                0x000000000800159c       0x40 build/main.o
+                0x000000000800159c                Register<(unsigned char)1, (Modbus_function)5, (unsigned short)2, bool>::get_crc()
  .text._ZN8RegisterILh1EL15Modbus_function5ELt1EbE7get_crcEv
-                0x0000000008001598       0x40 build/main.o
-                0x0000000008001598                Register<(unsigned char)1, (Modbus_function)5, (unsigned short)1, bool>::get_crc()
+                0x00000000080015dc       0x40 build/main.o
+                0x00000000080015dc                Register<(unsigned char)1, (Modbus_function)5, (unsigned short)1, bool>::get_crc()
  .text._ZN8RegisterILh1EL15Modbus_function5ELt0EbE7get_crcEv
-                0x00000000080015d8       0x40 build/main.o
-                0x00000000080015d8                Register<(unsigned char)1, (Modbus_function)5, (unsigned short)0, bool>::get_crc()
+                0x000000000800161c       0x40 build/main.o
+                0x000000000800161c                Register<(unsigned char)1, (Modbus_function)5, (unsigned short)0, bool>::get_crc()
  .text.startup._GLOBAL__sub_I_tickUpdater
-                0x0000000008001618       0xb0 build/main.o
+                0x000000000800165c       0xb0 build/main.o
  .text.Reset_Handler
-                0x00000000080016c8       0x50 build/startup_stm32f030x6.o
-                0x00000000080016c8                Reset_Handler
+                0x000000000800170c       0x50 build/startup_stm32f030x6.o
+                0x000000000800170c                Reset_Handler
  .text.Default_Handler
-                0x0000000008001718        0x2 build/startup_stm32f030x6.o
-                0x0000000008001718                HardFault_Handler
-                0x0000000008001718                PendSV_Handler
-                0x0000000008001718                NMI_Handler
-                0x0000000008001718                I2C1_IRQHandler
-                0x0000000008001718                SPI1_IRQHandler
-                0x0000000008001718                EXTI2_3_IRQHandler
-                0x0000000008001718                ADC1_IRQHandler
-                0x0000000008001718                RTC_IRQHandler
-                0x0000000008001718                EXTI4_15_IRQHandler
-                0x0000000008001718                RCC_IRQHandler
-                0x0000000008001718                Default_Handler
-                0x0000000008001718                EXTI0_1_IRQHandler
-                0x0000000008001718                SVC_Handler
-                0x0000000008001718                WWDG_IRQHandler
-                0x0000000008001718                FLASH_IRQHandler
+                0x000000000800175c        0x2 build/startup_stm32f030x6.o
+                0x000000000800175c                HardFault_Handler
+                0x000000000800175c                PendSV_Handler
+                0x000000000800175c                NMI_Handler
+                0x000000000800175c                I2C1_IRQHandler
+                0x000000000800175c                SPI1_IRQHandler
+                0x000000000800175c                EXTI2_3_IRQHandler
+                0x000000000800175c                ADC1_IRQHandler
+                0x000000000800175c                RTC_IRQHandler
+                0x000000000800175c                EXTI4_15_IRQHandler
+                0x000000000800175c                RCC_IRQHandler
+                0x000000000800175c                Default_Handler
+                0x000000000800175c                EXTI0_1_IRQHandler
+                0x000000000800175c                SVC_Handler
+                0x000000000800175c                WWDG_IRQHandler
+                0x000000000800175c                FLASH_IRQHandler
  *(.glue_7)
- .glue_7        0x000000000800171a        0x0 linker stubs
+ .glue_7        0x000000000800175e        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x000000000800171a        0x0 linker stubs
+ .glue_7t       0x000000000800175e        0x0 linker stubs
  *(.eh_frame)
- *fill*         0x000000000800171a        0x2 
- .eh_frame      0x000000000800171c        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
+ *fill*         0x000000000800175e        0x2 
+ .eh_frame      0x0000000008001760        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
  *(.init)
- .init          0x000000000800171c        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crti.o
-                0x000000000800171c                _init
- .init          0x0000000008001720        0x8 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtn.o
+ .init          0x0000000008001760        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crti.o
+                0x0000000008001760                _init
+ .init          0x0000000008001764        0x8 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtn.o
  *(.fini)
- .fini          0x0000000008001728        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crti.o
-                0x0000000008001728                _fini
- .fini          0x000000000800172c        0x8 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtn.o
-                0x0000000008001734                . = ALIGN (0x4)
-                0x0000000008001734                _etext = .
+ .fini          0x000000000800176c        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crti.o
+                0x000000000800176c                _fini
+ .fini          0x0000000008001770        0x8 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtn.o
+                0x0000000008001778                . = ALIGN (0x4)
+                0x0000000008001778                _etext = .
 
-.vfp11_veneer   0x0000000008001734        0x0
- .vfp11_veneer  0x0000000008001734        0x0 linker stubs
+.vfp11_veneer   0x0000000008001778        0x0
+ .vfp11_veneer  0x0000000008001778        0x0 linker stubs
 
-.v4_bx          0x0000000008001734        0x0
- .v4_bx         0x0000000008001734        0x0 linker stubs
+.v4_bx          0x0000000008001778        0x0
+ .v4_bx         0x0000000008001778        0x0 linker stubs
 
-.iplt           0x0000000008001734        0x0
- .iplt          0x0000000008001734        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
+.iplt           0x0000000008001778        0x0
+ .iplt          0x0000000008001778        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
 
-.rodata         0x0000000008001734      0x284
-                0x0000000008001734                . = ALIGN (0x4)
+.rodata         0x0000000008001778      0x290
+                0x0000000008001778                . = ALIGN (0x4)
  *(.rodata)
  *(.rodata*)
  .rodata._ZTV8RegisterILh1EL15Modbus_function5ELt0EbE
-                0x0000000008001734        0xc build/main.o
-                0x0000000008001734                vtable for Register<(unsigned char)1, (Modbus_function)5, (unsigned short)0, bool>
+                0x0000000008001778        0xc build/main.o
+                0x0000000008001778                vtable for Register<(unsigned char)1, (Modbus_function)5, (unsigned short)0, bool>
  .rodata._ZTV8RegisterILh1EL15Modbus_function5ELt1EbE
-                0x0000000008001740        0xc build/main.o
-                0x0000000008001740                vtable for Register<(unsigned char)1, (Modbus_function)5, (unsigned short)1, bool>
+                0x0000000008001784        0xc build/main.o
+                0x0000000008001784                vtable for Register<(unsigned char)1, (Modbus_function)5, (unsigned short)1, bool>
+ .rodata._ZTV8RegisterILh1EL15Modbus_function5ELt2EbE
+                0x0000000008001790        0xc build/main.o
+                0x0000000008001790                vtable for Register<(unsigned char)1, (Modbus_function)5, (unsigned short)2, bool>
  .rodata._ZTV8RegisterILh1EL15Modbus_function3ELt11EtE
-                0x000000000800174c        0xc build/main.o
-                0x000000000800174c                vtable for Register<(unsigned char)1, (Modbus_function)3, (unsigned short)11, unsigned short>
+                0x000000000800179c        0xc build/main.o
+                0x000000000800179c                vtable for Register<(unsigned char)1, (Modbus_function)3, (unsigned short)11, unsigned short>
  .rodata._ZTV8RegisterILh1EL15Modbus_function3ELt7EtE
-                0x0000000008001758        0xc build/main.o
-                0x0000000008001758                vtable for Register<(unsigned char)1, (Modbus_function)3, (unsigned short)7, unsigned short>
+                0x00000000080017a8        0xc build/main.o
+                0x00000000080017a8                vtable for Register<(unsigned char)1, (Modbus_function)3, (unsigned short)7, unsigned short>
  .rodata._ZTV8RegisterILh1EL15Modbus_function3ELt8EtE
-                0x0000000008001764        0xc build/main.o
-                0x0000000008001764                vtable for Register<(unsigned char)1, (Modbus_function)3, (unsigned short)8, unsigned short>
+                0x00000000080017b4        0xc build/main.o
+                0x00000000080017b4                vtable for Register<(unsigned char)1, (Modbus_function)3, (unsigned short)8, unsigned short>
  .rodata._ZTV8RegisterILh1EL15Modbus_function3ELt5EtE
-                0x0000000008001770        0xc build/main.o
-                0x0000000008001770                vtable for Register<(unsigned char)1, (Modbus_function)3, (unsigned short)5, unsigned short>
+                0x00000000080017c0        0xc build/main.o
+                0x00000000080017c0                vtable for Register<(unsigned char)1, (Modbus_function)3, (unsigned short)5, unsigned short>
  .rodata._ZTV8RegisterILh1EL15Modbus_function3ELt6EtE
-                0x000000000800177c        0xc build/main.o
-                0x000000000800177c                vtable for Register<(unsigned char)1, (Modbus_function)3, (unsigned short)6, unsigned short>
+                0x00000000080017cc        0xc build/main.o
+                0x00000000080017cc                vtable for Register<(unsigned char)1, (Modbus_function)3, (unsigned short)6, unsigned short>
  .rodata._ZTVN13Modbus_masterILj9EE14uart_interruptE
-                0x0000000008001788        0xc build/main.o
-                0x0000000008001788                vtable for Modbus_master<9u>::uart_interrupt
+                0x00000000080017d8        0xc build/main.o
+                0x00000000080017d8                vtable for Modbus_master<9u>::uart_interrupt
  .rodata._ZTVN13Modbus_masterILj9EE13dma_interruptE
-                0x0000000008001794        0xc build/main.o
-                0x0000000008001794                vtable for Modbus_master<9u>::dma_interrupt
+                0x00000000080017e4        0xc build/main.o
+                0x00000000080017e4                vtable for Modbus_master<9u>::dma_interrupt
  .rodata._ZTV13Modbus_masterILj9EE
-                0x00000000080017a0        0xc build/main.o
-                0x00000000080017a0                vtable for Modbus_master<9u>
+                0x00000000080017f0        0xc build/main.o
+                0x00000000080017f0                vtable for Modbus_master<9u>
  .rodata._ZL13crc_low_table
-                0x00000000080017ac      0x100 build/main.o
+                0x00000000080017fc      0x100 build/main.o
  .rodata._ZL14crc_high_table
-                0x00000000080018ac      0x100 build/main.o
+                0x00000000080018fc      0x100 build/main.o
  .rodata._ZTV8RegisterILh1EL15Modbus_function3ELt4EZ4mainE10Work_flagsE
-                0x00000000080019ac        0xc build/main.o
-                0x00000000080019b8                . = ALIGN (0x4)
+                0x00000000080019fc        0xc build/main.o
+                0x0000000008001a08                . = ALIGN (0x4)
 
-.rel.dyn        0x00000000080019b8        0x0
- .rel.iplt      0x00000000080019b8        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
+.rel.dyn        0x0000000008001a08        0x0
+ .rel.iplt      0x0000000008001a08        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x00000000080019b8        0x0
-                0x00000000080019b8                __exidx_start = .
+.ARM            0x0000000008001a08        0x0
+                0x0000000008001a08                __exidx_start = .
  *(.ARM.exidx*)
-                0x00000000080019b8                __exidx_end = .
+                0x0000000008001a08                __exidx_end = .
 
-.preinit_array  0x00000000080019b8        0x0
-                0x00000000080019b8                PROVIDE (__preinit_array_start = .)
+.preinit_array  0x0000000008001a08        0x0
+                0x0000000008001a08                PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x00000000080019b8                PROVIDE (__preinit_array_end = .)
+                0x0000000008001a08                PROVIDE (__preinit_array_end = .)
 
-.init_array     0x00000000080019b8        0x8
-                0x00000000080019b8                PROVIDE (__init_array_start = .)
+.init_array     0x0000000008001a08        0x8
+                0x0000000008001a08                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x00000000080019b8        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
- .init_array    0x00000000080019bc        0x4 build/main.o
-                0x00000000080019c0                PROVIDE (__init_array_end = .)
+ .init_array    0x0000000008001a08        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
+ .init_array    0x0000000008001a0c        0x4 build/main.o
+                0x0000000008001a10                PROVIDE (__init_array_end = .)
 
-.fini_array     0x00000000080019c0        0x4
-                0x00000000080019c0                PROVIDE (__fini_array_start = .)
+.fini_array     0x0000000008001a10        0x4
+                0x0000000008001a10                PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x00000000080019c0        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
-                0x00000000080019c4                PROVIDE (__fini_array_end = .)
-                0x00000000080019c4                _sidata = LOADADDR (.data)
+ .fini_array    0x0000000008001a10        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
+                0x0000000008001a14                PROVIDE (__fini_array_end = .)
+                0x0000000008001a14                _sidata = LOADADDR (.data)
 
-.data           0x0000000020000000        0x0 load address 0x00000000080019c4
+.data           0x0000000020000000        0x0 load address 0x0000000008001a14
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                _sdata = .
  *(.data)
@@ -587,17 +595,17 @@ LOAD /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtn.o
                 0x0000000020000000                _edata = .
 
 .tm_clone_table
-                0x0000000020000000        0x0 load address 0x00000000080019c4
+                0x0000000020000000        0x0 load address 0x0000000008001a14
  .tm_clone_table
                 0x0000000020000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
  .tm_clone_table
                 0x0000000020000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtend.o
 
-.igot.plt       0x0000000020000000        0x0 load address 0x00000000080019c4
+.igot.plt       0x0000000020000000        0x0 load address 0x0000000008001a14
  .igot.plt      0x0000000020000000        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
                 0x0000000020000000                . = ALIGN (0x4)
 
-.bss            0x0000000020000000      0x29c load address 0x00000000080019c4
+.bss            0x0000000020000000      0x29c load address 0x0000000008001a14
                 0x0000000020000000                _sbss = .
                 0x0000000020000000                __bss_start__ = _sbss
  *(.bss)
@@ -703,7 +711,7 @@ LOAD /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtn.o
                 0x000000002000029c                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x000000002000029c      0x604 load address 0x00000000080019c4
+                0x000000002000029c      0x604 load address 0x0000000008001a14
                 0x00000000200002a0                . = ALIGN (0x8)
  *fill*         0x000000002000029c        0x4 
                 [!provide]                        PROVIDE (end = .)
@@ -764,16 +772,16 @@ LOAD /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a
  .comment       0x00000000000000a7       0x4f /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memset.o)
  .comment       0x00000000000000a7       0x5a /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtend.o
 
-.debug_info     0x0000000000000000    0x287b1
- .debug_info    0x0000000000000000    0x26787 build/main.o
- .debug_info    0x0000000000026787       0x22 build/startup_stm32f030x6.o
- .debug_info    0x00000000000267a9      0x11a /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-init.o)
- .debug_info    0x00000000000268c3      0xf35 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memcpy-stub.o)
- .debug_info    0x00000000000277f8      0xf21 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memset.o)
- .debug_info    0x0000000000028719       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_thumb1_case_uqi.o)
- .debug_info    0x000000000002873f       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
- .debug_info    0x0000000000028765       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
- .debug_info    0x000000000002878b       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+.debug_info     0x0000000000000000    0x28c93
+ .debug_info    0x0000000000000000    0x26c69 build/main.o
+ .debug_info    0x0000000000026c69       0x22 build/startup_stm32f030x6.o
+ .debug_info    0x0000000000026c8b      0x11a /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-init.o)
+ .debug_info    0x0000000000026da5      0xf35 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_info    0x0000000000027cda      0xf21 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memset.o)
+ .debug_info    0x0000000000028bfb       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_thumb1_case_uqi.o)
+ .debug_info    0x0000000000028c21       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .debug_info    0x0000000000028c47       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
+ .debug_info    0x0000000000028c6d       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
 
 .debug_abbrev   0x0000000000000000     0x1c8d
  .debug_abbrev  0x0000000000000000     0x17a1 build/main.o
@@ -786,71 +794,71 @@ LOAD /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a
  .debug_abbrev  0x0000000000001c65       0x14 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
  .debug_abbrev  0x0000000000001c79       0x14 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
 
-.debug_loc      0x0000000000000000     0x66a2
- .debug_loc     0x0000000000000000     0x5eaa build/main.o
- .debug_loc     0x0000000000005eaa       0x98 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-init.o)
- .debug_loc     0x0000000000005f42      0x481 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memcpy-stub.o)
- .debug_loc     0x00000000000063c3      0x2df /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memset.o)
+.debug_loc      0x0000000000000000     0x6839
+ .debug_loc     0x0000000000000000     0x6041 build/main.o
+ .debug_loc     0x0000000000006041       0x98 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-init.o)
+ .debug_loc     0x00000000000060d9      0x481 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_loc     0x000000000000655a      0x2df /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memset.o)
 
-.debug_aranges  0x0000000000000000      0x300
+.debug_aranges  0x0000000000000000      0x308
  .debug_aranges
-                0x0000000000000000      0x1f8 build/main.o
+                0x0000000000000000      0x200 build/main.o
  .debug_aranges
-                0x00000000000001f8       0x28 build/startup_stm32f030x6.o
+                0x0000000000000200       0x28 build/startup_stm32f030x6.o
  .debug_aranges
-                0x0000000000000220       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-init.o)
+                0x0000000000000228       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-init.o)
  .debug_aranges
-                0x0000000000000240       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memcpy-stub.o)
+                0x0000000000000248       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memcpy-stub.o)
  .debug_aranges
-                0x0000000000000260       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memset.o)
+                0x0000000000000268       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memset.o)
  .debug_aranges
-                0x0000000000000280       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_thumb1_case_uqi.o)
+                0x0000000000000288       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_thumb1_case_uqi.o)
  .debug_aranges
-                0x00000000000002a0       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+                0x00000000000002a8       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
  .debug_aranges
-                0x00000000000002c0       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
+                0x00000000000002c8       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
  .debug_aranges
-                0x00000000000002e0       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+                0x00000000000002e8       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
 
-.debug_ranges   0x0000000000000000     0x17a8
- .debug_ranges  0x0000000000000000     0x1788 build/main.o
- .debug_ranges  0x0000000000001788       0x20 build/startup_stm32f030x6.o
+.debug_ranges   0x0000000000000000     0x17e0
+ .debug_ranges  0x0000000000000000     0x17c0 build/main.o
+ .debug_ranges  0x00000000000017c0       0x20 build/startup_stm32f030x6.o
 
-.debug_line     0x0000000000000000     0x37ce
- .debug_line    0x0000000000000000     0x2fcf build/main.o
- .debug_line    0x0000000000002fcf       0x8e build/startup_stm32f030x6.o
- .debug_line    0x000000000000305d       0xfc /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-init.o)
- .debug_line    0x0000000000003159      0x24d /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memcpy-stub.o)
- .debug_line    0x00000000000033a6      0x281 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memset.o)
- .debug_line    0x0000000000003627       0x68 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_thumb1_case_uqi.o)
- .debug_line    0x000000000000368f       0x6c /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
- .debug_line    0x00000000000036fb       0x73 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
- .debug_line    0x000000000000376e       0x60 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+.debug_line     0x0000000000000000     0x3842
+ .debug_line    0x0000000000000000     0x3043 build/main.o
+ .debug_line    0x0000000000003043       0x8e build/startup_stm32f030x6.o
+ .debug_line    0x00000000000030d1       0xfc /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-init.o)
+ .debug_line    0x00000000000031cd      0x24d /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_line    0x000000000000341a      0x281 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memset.o)
+ .debug_line    0x000000000000369b       0x68 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_thumb1_case_uqi.o)
+ .debug_line    0x0000000000003703       0x6c /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .debug_line    0x000000000000376f       0x73 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
+ .debug_line    0x00000000000037e2       0x60 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
 
-.debug_str      0x0000000000000000    0x27381
- .debug_str     0x0000000000000000    0x26ddd build/main.o
-                                      0x275da (size before relaxing)
- .debug_str     0x0000000000026ddd       0x38 build/startup_stm32f030x6.o
+.debug_str      0x0000000000000000    0x277de
+ .debug_str     0x0000000000000000    0x2723a build/main.o
+                                      0x27a37 (size before relaxing)
+ .debug_str     0x000000000002723a       0x38 build/startup_stm32f030x6.o
                                          0x54 (size before relaxing)
- .debug_str     0x0000000000026e15      0x180 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-init.o)
+ .debug_str     0x0000000000027272      0x180 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-init.o)
                                         0x222 (size before relaxing)
- .debug_str     0x0000000000026f95      0x2b6 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_str     0x00000000000273f2      0x2b6 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memcpy-stub.o)
                                         0x92d (size before relaxing)
- .debug_str     0x000000000002724b       0x9f /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memset.o)
+ .debug_str     0x00000000000276a8       0x9f /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memset.o)
                                         0x908 (size before relaxing)
- .debug_str     0x00000000000272ea       0x97 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_thumb1_case_uqi.o)
+ .debug_str     0x0000000000027747       0x97 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_thumb1_case_uqi.o)
                                          0xa3 (size before relaxing)
- .debug_str     0x0000000000027381       0xa3 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
- .debug_str     0x0000000000027381       0xa3 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
- .debug_str     0x0000000000027381       0xa3 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+ .debug_str     0x00000000000277de       0xa3 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .debug_str     0x00000000000277de       0xa3 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
+ .debug_str     0x00000000000277de       0xa3 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
 
-.debug_frame    0x0000000000000000      0x630
- .debug_frame   0x0000000000000000      0x560 build/main.o
- .debug_frame   0x0000000000000560       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-init.o)
- .debug_frame   0x000000000000058c       0x34 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memcpy-stub.o)
- .debug_frame   0x00000000000005c0       0x30 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memset.o)
- .debug_frame   0x00000000000005f0       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
- .debug_frame   0x0000000000000610       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
+.debug_frame    0x0000000000000000      0x650
+ .debug_frame   0x0000000000000000      0x580 build/main.o
+ .debug_frame   0x0000000000000580       0x2c /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-init.o)
+ .debug_frame   0x00000000000005ac       0x34 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x00000000000005e0       0x30 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc_nano.a(lib_a-memset.o)
+ .debug_frame   0x0000000000000610       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .debug_frame   0x0000000000000630       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
 
 Cross Reference Table
 
@@ -896,6 +904,7 @@ Register<(unsigned char)1, (Modbus_function)3, (unsigned short)7, unsigned short
 Register<(unsigned char)1, (Modbus_function)3, (unsigned short)8, unsigned short>::get_crc() build/main.o
 Register<(unsigned char)1, (Modbus_function)5, (unsigned short)0, bool>::get_crc() build/main.o
 Register<(unsigned char)1, (Modbus_function)5, (unsigned short)1, bool>::get_crc() build/main.o
+Register<(unsigned char)1, (Modbus_function)5, (unsigned short)2, bool>::get_crc() build/main.o
 Register_base** std::__find_if<Register_base**, __gnu_cxx::__ops::_Iter_pred<Modbus_master<9u>::operator()()::{lambda(auto:1)#1}> >(Register_base**, Register_base**, __gnu_cxx::__ops::_Iter_pred<Modbus_master<9u>::operator()()::{lambda(auto:1)#1}>, std::random_access_iterator_tag) build/main.o
 Reset_Handler                                     build/startup_stm32f030x6.o
 SPI1_IRQHandler                                   build/startup_stm32f030x6.o
@@ -1050,3 +1059,4 @@ vtable for Register<(unsigned char)1, (Modbus_function)3, (unsigned short)7, uns
 vtable for Register<(unsigned char)1, (Modbus_function)3, (unsigned short)8, unsigned short> build/main.o
 vtable for Register<(unsigned char)1, (Modbus_function)5, (unsigned short)0, bool> build/main.o
 vtable for Register<(unsigned char)1, (Modbus_function)5, (unsigned short)1, bool> build/main.o
+vtable for Register<(unsigned char)1, (Modbus_function)5, (unsigned short)2, bool> build/main.o

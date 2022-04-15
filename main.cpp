@@ -61,7 +61,7 @@ int main()
 
         Register<uov_address, Modbus_function::force_coil_05, 0> us;
         Register<uov_address, Modbus_function::force_coil_05, 1> uv;
-        Register<uov_address, Modbus_function::force_coil_05, 1> rc;
+        Register<uov_address, Modbus_function::force_coil_05, 2> rc;
 
         Register<uov_address, Modbus_function::read_03, 11> lamp_flags;
         Register<uov_address, Modbus_function::read_03, 7>  uv_level;
