@@ -3,7 +3,7 @@
 
 #include "periph_rcc.h"
 #include "pin.h"
-#include "modbus_master.h"
+#include "modbus_slave.h"
 #include "literals.h"
 #include "init_clock.h"
 #include <bitset>
@@ -26,80 +26,79 @@ using TX  = mcu::PA2;
 using RX  = mcu::PA3;
 using RTS = mcu::PB1;
 
-template<int lamps_qty>
-bool any_lamps_off (uint16_t lamps_flag)
-{
-    std::bitset<lamps_qty> bits {lamps_flag};
-    return bits.any();
-}
+struct Control {
+    bool control_us : 1;
+    bool control_uv : 1;
+    bool distance   : 1;
+    uint16_t        : 5;
+    bool us_on      : 1;
+    bool uv_on      : 1;
+    bool alarm      : 1;
+    uint16_t        : 5;
+};
+
+struct In_regs {
+    uint16_t res_0;     //0
+    uint16_t res_1;     //1
+    uint16_t res_2;     //2
+    uint16_t res_3;     //3
+    Control control;    //4
+}__attribute__((packed));
+
+struct Out_regs {
+    uint16_t res_0;     //0
+    uint16_t res_1;     //1
+    uint16_t res_2;     //2
+    uint16_t res_3;     //3
+    Control control;    //4
+}__attribute__((packed));
+
+
+#define ADR(reg) GET_ADR(In_regs, reg)
+
 
 int main()
 {
     auto [control_us, control_uv, distance_control] = make_pins<mcu::PinMode::Input ,DI1,DI2,DI3>();
     auto [sense_us  , sense_uv  , alarm           ] = make_pins<mcu::PinMode::Output,DO1,DO2,DO3>();
 
-    constexpr bool parity_enable {true};
-    constexpr int  timeout       {200_ms};
-    constexpr UART::Settings set {
-          not parity_enable
-        , UART::Parity::even
-        , UART::DataBits::_8
-        , UART::StopBits::_1
-        , UART::Baudrate::BR9600
+    uint8_t address{101};
+    UART::Settings uart_set = {
+      .parity_enable  = false,
+      .parity         = USART::Parity::even,
+      .data_bits      = USART::DataBits::_8,
+      .stop_bits      = USART::StopBits::_1,
+      .baudrate       = USART::Baudrate::BR9600,
+      .res            = 0
     };
 
-    constexpr auto uov_address {1};
-
-    struct Work_flags {
-        bool us_on :1;
-        bool uv_on :1;
-        uint16_t   :14;
-    };
-
-    struct Modbus {
-        Register<uov_address, Modbus_function::read_03, 4, Work_flags> state;
-
-        Register<uov_address, Modbus_function::force_coil_05, 0> us;
-        Register<uov_address, Modbus_function::force_coil_05, 1> uv;
-        Register<uov_address, Modbus_function::force_coil_05, 2> rc;
-
-        Register<uov_address, Modbus_function::read_03, 11> lamp_flags;
-        Register<uov_address, Modbus_function::read_03, 7>  uv_level;
-        Register<uov_address, Modbus_function::read_03, 8>  min_uv_level;
-        Register<uov_address, Modbus_function::read_03, 5>  temperature;
-        Register<uov_address, Modbus_function::read_03, 6>  max_temperature;
-    } modbus;
-
-    modbus.max_temperature = 55; // пока не пришло значение по модбасу
-
-    decltype(auto) modbus_master =
-        make_modbus_master <mcu::Periph::USART1, TX, RX, RTS> (
-            timeout, set, modbus
-        );
-
-    bool overheat {false};
-    constexpr auto recovery_temperature {20};
+    volatile decltype(auto) modbus = Modbus_slave<In_regs, Out_regs>
+        ::make<mcu::Periph::USART1, TX, RX, RTS>(address, uart_set);
+    
 
     while (1) {
-        modbus_master();
 
-        modbus.us.disable = not distance_control;
-        modbus.uv.disable = not distance_control;
-        modbus.us = control_us;
-        modbus.uv = control_uv;
-        modbus.rc = distance_control;
+        if (distance_control) {
+            modbus.outRegs.control.control_us = control_us;
+            modbus.outRegs.control.control_uv = control_uv;
+            modbus.outRegs.control.distance   = distance_control;
+        } else {
+            modbus.outRegs.control.control_us = false;
+            modbus.outRegs.control.control_uv = false;
+            modbus.outRegs.control.distance   = false;
+        }
+        
 
-        Work_flags state = modbus.state;
-        sense_uv = state.uv_on;
-        sense_us = state.us_on;
-
-        if (overheat |= modbus.temperature > modbus.max_temperature)
-            overheat  = modbus.temperature > recovery_temperature;
-
-
-        alarm = (state.uv_on and any_lamps_off<6>(modbus.lamp_flags)) // remake without template
-             or (state.uv_on and modbus.uv_level < modbus.min_uv_level)
-             or overheat;
+        modbus([&](auto registr){
+            switch (registr) {
+                case ADR(control):
+                    sense_us = modbus.outRegs.control.us_on = modbus.inRegs.control.us_on;
+                    sense_uv = modbus.outRegs.control.uv_on = modbus.inRegs.control.uv_on;
+                    alarm    = modbus.outRegs.control.alarm = modbus.inRegs.control.alarm;
+                break;
+            }
+        });
+      
 
         __WFI();
     }

@@ -8,11 +8,10 @@ build/main.d: main.cpp mculib3/src/periph/periph_rcc.h \
  mculib3/src/bits/bits_rcc_f0.h mculib3/src/pin.h \
  mculib3/src/periph/periph_gpio.h mculib3/src/pins.h \
  mculib3/src/periph/gpio_f0_f4_f7.h mculib3/src/bits/bits_gpio_f0_f4_f7.h \
- mculib3/src/meta.h mculib3/src/modbus_master.h mculib3/src/bit.h \
- mculib3/src/timers.h mculib3/src/subscriber.h mculib3/src/list.h \
- mculib3/src/periph/systick.h mculib3/src/bits/bits_systick_f0_f4.h \
- mculib3/src/literals.h mculib3/src/function.h mculib3/src/table_crc.h \
- mculib3/src/ring_buffer.h mculib3/src/uart.h \
+ mculib3/src/meta.h mculib3/src/modbus_slave.h mculib3/src/timers.h \
+ mculib3/src/subscriber.h mculib3/src/list.h mculib3/src/periph/systick.h \
+ mculib3/src/bits/bits_systick_f0_f4.h mculib3/src/literals.h \
+ mculib3/src/function.h mculib3/src/table_crc.h mculib3/src/uart.h \
  mculib3/src/periph/periph_usart.h mculib3/src/periph/usart_f0.h \
  mculib3/src/bits/bits_usart_f0.h mculib3/src/periph/periph_dma.h \
  mculib3/src/periph/dma_f0.h mculib3/src/bits/bits_dma_f0.h \
@@ -21,8 +20,7 @@ build/main.d: main.cpp mculib3/src/periph/periph_rcc.h \
  mculib3/src/interrupt.h mculib3/src/interrupts.h \
  mculib3/src/periph/periph_spi.h mculib3/src/periph/periph_tim.h \
  mculib3/src/periph/tim_f0_f4.h mculib3/src/bits/bits_tim_f0.h \
- mculib3/src/static_vector.h mculib3/src/modbus_common.h \
- mculib3/src/reflect.h mculib3/src/periph/init_clock.h \
+ mculib3/src/modbus_common.h mculib3/src/periph/init_clock.h \
  mculib3/src/periph/init_clock_f0.h mculib3/src/periph/periph_flash.h \
  mculib3/src/periph/flash_f0.h mculib3/src/bits/bits_flash_f0.h
 
@@ -58,9 +56,7 @@ mculib3/src/bits/bits_gpio_f0_f4_f7.h:
 
 mculib3/src/meta.h:
 
-mculib3/src/modbus_master.h:
-
-mculib3/src/bit.h:
+mculib3/src/modbus_slave.h:
 
 mculib3/src/timers.h:
 
@@ -77,8 +73,6 @@ mculib3/src/literals.h:
 mculib3/src/function.h:
 
 mculib3/src/table_crc.h:
-
-mculib3/src/ring_buffer.h:
 
 mculib3/src/uart.h:
 
@@ -112,11 +106,7 @@ mculib3/src/periph/tim_f0_f4.h:
 
 mculib3/src/bits/bits_tim_f0.h:
 
-mculib3/src/static_vector.h:
-
 mculib3/src/modbus_common.h:
-
-mculib3/src/reflect.h:
 
 mculib3/src/periph/init_clock.h:
 
